@@ -772,3 +772,4 @@ static int __init vfp_init(void)
 }
 
 late_initcall(vfp_init);
+core_initcall(vfp_init);
