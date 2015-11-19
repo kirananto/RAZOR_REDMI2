@@ -437,7 +437,7 @@ static int ltr553_parse_dt(struct device *dev, struct ltr553_data *ltr)
 		dev_err(dev, "read liteon,ps-pulses failed\n");
 		return rc;
 	}
-	if (value > 0x7) {
+	if (value > 0xf) {
 		dev_err(dev, "liteon,ps-pulses out of range\n");
 		return -EINVAL;
 	}
@@ -619,6 +619,13 @@ static int ltr553_init_device(struct ltr553_data *ltr)
 	if (rc) {
 		dev_err(&ltr->i2c->dev, "write %d register failed\n",
 				LTR553_REG_INTERRUPT_PERSIST);
+		return rc;
+	}
+
+	rc = regmap_write(ltr->regmap, LTR553_REG_PS_LED, ltr->ps_led);
+	if (rc) {
+		dev_err(&ltr->i2c->dev, "write %d register failed\n",
+				LTR553_REG_PS_LED);
 		return rc;
 	}
 
