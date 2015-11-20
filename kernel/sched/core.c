@@ -635,8 +635,8 @@ void resched_task(struct task_struct *p)
 
 void resched_cpu(int cpu)
 {
-	struct rq *rq = cpu_rq(cpu);
 	unsigned long flags;
+	int i;
 
 	if (!raw_spin_trylock_irqsave(&rq->lock, flags))
 		return;
