@@ -15,6 +15,7 @@
 *.a
 *.s
 *.ko
+zImage
 *.so
 *.so.dbg
 *.mod.c
