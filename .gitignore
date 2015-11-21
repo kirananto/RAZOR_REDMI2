@@ -19,6 +19,7 @@ zImage
 *.so
 *.so.dbg
 *.mod.c
+*.zip
 *.i
 *.lst
 *.symtypes
