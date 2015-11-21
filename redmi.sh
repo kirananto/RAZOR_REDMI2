@@ -16,7 +16,6 @@
  #
 KERNEL_DIR=$PWD
 KERN_IMG=$KERNEL_DIR/arch/arm/boot/Image
-MODULES_DIR=$KERNEL_DIR/RaZORBUILDOUTPUT/Common
 BUILD_START=$(date +"%s")
 blue='\033[0;34m'
 cyan='\033[0;36m'
@@ -34,8 +33,7 @@ STRIP="$KERNEL_DIR/../Toolchains/arm-eabi-4.9/bin/arm-eabi-strip"
 
 compile_kernel ()
 {
-rm $MODULES_DIR/../RedmiOutput/anykernel/zImage
-rm $MODULES_DIR/../RedmiOutput/anykernel/modules/*
+rm $KERNEL_DIR/RaZORBUILDOUTPUT/RedmiOutput/anykernel/zImage
 rm $KERNEL_DIR/arch/arm/boot/zImage
 echo -e "****************************************************"
 echo -e "****************************************************"
@@ -56,25 +54,12 @@ echo -e " |_|  \_\|_____||____/ |_____||_|  \_\|_|    \___|"
 echo -e "****************************************************"
 echo -e "****************************************************"
 make cyanogenmod_wt88047_defconfig
-make -j12
+make -j4
 if ! [ -a $KERN_IMG ];
 then
 echo -e "$red Kernel Compilation failed! Fix the errors! $nocol"
 exit 1
 fi
-strip_modules
-}
-
-
-strip_modules ()
-{
-echo "Copying modules"
-rm $MODULES_DIR/*
-find . -name '*.ko' -exec cp {} $MODULES_DIR/ \;
-cd $MODULES_DIR
-echo "Stripping modules for size"
-$STRIP --strip-unneeded *.ko
-cd $KERNEL_DIR
 }
 
 case $1 in
@@ -85,12 +70,11 @@ make ARCH=arm -j8 clean mrproper
 compile_kernel
 ;;
 esac
-cp $KERNEL_DIR/arch/arm/boot/zImage  $MODULES_DIR/../RedmiOutput/anykernel/zImage
-cp $MODULES_DIR/* $MODULES_DIR/../RedmiOutput/anykernel/modules/
-cd $MODULES_DIR/../RedmiOutput/anykernel/
+cp $KERNEL_DIR/arch/arm/boot/zImage  $KERNEL_DIR/RaZORBUILDOUTPUT/RedmiOutput/anykernel/zImage
+cd $KERNEL_DIR/RaZORBUILDOUTPUT/RedmiOutput/anykernel/
 zipfile="RR1.0-REDMI-ALPHA-0.9-$(date +"%Y-%m-%d(%I.%M%p)").zip"
-zip -r ../$zipfile ramdisk anykernel.sh dtb modules zImage patch tools META-INF -x *kernel/.gitignore*
-dropbox_uploader -p upload $MODULES_DIR/../RedmiOutput/$zipfile /test/
+zip -r ../$zipfile ramdisk anykernel.sh dtb zImage patch tools META-INF -x *kernel/.gitignore*
+dropbox_uploader -p upload $KERNEL_DIR/RaZORBUILDOUTPUT/RedmiOutput/$zipfile /test/
 dropbox_uploader share /test/$zipfile
 BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))
