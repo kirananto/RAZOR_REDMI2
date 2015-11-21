@@ -362,7 +362,7 @@ void register_irq_proc(unsigned int irq, struct irq_desc *desc)
 	mutex_lock(&register_lock);
 
 	if (desc->dir)
-+		goto out_unlock;
+		goto out_unlock;
 
 
 	memset(name, 0, MAX_NAMELEN);

@@ -43,45 +43,28 @@ ui_print " ";
 
 /sbin/busybox mount /system;
 
-if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.initd)" == 1 ]; then
-  ui_print "Creating init.d...";
-  ui_print " ";
-  mkdir /system/etc/init.d;
-  set_perm_recursive 0 0 0755 0755 /system/etc/init.d;
-fi;
-ui_print "		********";
-ui_print "			Installing kernel.your ";
-ui_print "     Please Wait for    ";
-ui_print "          RazorSharp Phone..             ";
-ui_print "		********* ";
-ui_print "  ";
-ui_print "  ";
+ui_print "***********************";
+ui_print "Installing kernel....";
+ui_print "Please Wait for your";
+ui_print "RazorSharp Phone.......";
+ui_print "***********************";
 /sbin/sh /tmp/anykernel/anykernel.sh;
 if [ "$(cat /tmp/anykernel/exitcode)" == 1 ]; then 
   umount /system;
   abort;
 fi;
 ui_print "  ";
-ui_print "       ******";
-ui_print "	SUCCESS	";
-ui_print "       ******";
+ui_print "   SUCCESS  ";
 ui_print "  ";
-ui_print "  ";
-if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.modules)" == 1 ]; then
-ui_print "  ";
-  ui_print "Pushing modules...";
-  ui_print " ";
-  cp -f /tmp/anykernel/modules/* /system/lib/modules/;
-  set_perm_recursive 0 0 0755 0644 /system/lib/modules;
-fi;
 
 if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.cleanup)" == 1 ]; then
   rm -rf /tmp/anykernel;
 fi;
 
 umount /system;
-ui_print "       ******";
-ui_print "	THANKS FOR FLASHING";
-ui_print "	RazorReborn On Your Redmi2 ..";
-ui_print "	Leave a Feedback";
-ui_print "       ******";
+ui_print "*******************************";
+ui_print "THANKS FOR FLASHING";
+ui_print "RazorReborn On Your Redmi2 ..";
+ui_print "Leave a Feedback";
+ui_print "Donate If Possible";
+ui_print " ******************************";

@@ -4,15 +4,7 @@
 ## AnyKernel setup
 # EDIFY properties
 kernel.string=RaZorReborn
-do.devicecheck=0
-do.initd=0
-do.modules=1
 do.cleanup=1
-device.name1=hm2014811
-device.name2=HM2014811
-device.name3=
-device.name4=
-device.name5=
 
 # shell variables
 block=/dev/block/bootdevice/by-name/boot;
