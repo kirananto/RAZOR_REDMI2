@@ -32,14 +32,27 @@ cd /tmp/anykernel;
 unzip -o $ZIP;
 
 ui_print " ";
-ui_print " ";
-ui_print "**************************************";
-ui_print "          RAZORREBORN KERNEL         ";
-ui_print "                 BY                 ";
-ui_print "             KIRAN ANTO                 ";
-ui_print "**************************************";
+ui_print "****************************************************";
+ui_print "****************************************************";
+ui_print "         _____   _____  _______ _____  _____   ";
+ui_print "        |  _  \ |  _  ||___   /|  _  ||  _  \  ";
+ui_print "        | |_|  || /_\ |    / / | | | || |_|  | ";
+ui_print "        |    _/ |  _  |   / /  | | | ||    _/  ";
+ui_print "        | |\ \  | / \ |  / /   | | | || |\ \   ";
+ui_print "        | | \ \ | | | | / /__  | |_| || | \ \  ";
+ui_print "        |_|  \_\|_| |_|/_____| |_____||_|  \_\ ";
+ui_print "  _____   _____  ____   _____  _____   ___      _ ";
+ui_print " |  _  \ | ____||  _ \ |  _  ||  _  \ |   \    | |";
+ui_print " | |_|  || |    | |_| \| | | || |_|  || |\ \   | |";
+ui_print " |    _/ | |___ |     || | | ||    _/ | | \ \  | |";
+ui_print " | |\ \  |  ___||  _  || | | || |\ \  | |  \ \ | |";
+ui_print " | | \ \ | |___ | |_| /| |_| || | \ \ | |   \ \| |";
+ui_print " |_|  \_\|_____||____/ |_____||_|  \_\|_|    \___|";
 ui_print "  ";
-ui_print " ";
+ui_print "****************************************************";
+ui_print "                   by KIRAN ANTO                 ";
+ui_print "****************************************************";
+ui_print "  ";
 
 /sbin/busybox mount /system;
 
@@ -48,6 +61,8 @@ ui_print "Installing kernel....";
 ui_print "Please Wait for your";
 ui_print "RazorSharp Phone.......";
 ui_print "***********************";
+rm -rf /system/vendor/lib/hw/power.msm8916.so;
+rm -rf /system/vendor/lib64/hw/power.msm8916.so;
 /sbin/sh /tmp/anykernel/anykernel.sh;
 if [ "$(cat /tmp/anykernel/exitcode)" == 1 ]; then 
   umount /system;
