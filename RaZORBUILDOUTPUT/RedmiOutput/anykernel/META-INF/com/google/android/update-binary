@@ -79,7 +79,7 @@ fi;
 umount /system;
 ui_print "*******************************";
 ui_print "THANKS FOR FLASHING";
-ui_print "RazorReborn On Your Redmi2 ..";
+ui_print "RazorReborn On Your Redmi 2 / Prime ..";
 ui_print "Leave a Feedback";
 ui_print "Donate If Possible";
 ui_print " ******************************";
