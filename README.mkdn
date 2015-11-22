@@ -1,0 +1,166 @@
+
+RAZOR REBORN FOR REDMI 2 and REDMI 2 PRIME
+==========================================
+				By Kiran Anto
+==========================================
+
+DISCLAIMER :
+---------------
+
+Code:
+
+* Your warranty is now void.
+*
+* I am not responsible for bricked devices, dead SD cards,
+* thermonuclear war, or you getting fired because the alarm app failed. Please
+* do some research if you have any concerns about features included in this Kernel
+* before flashing it! YOU are choosing to make these modifications, and if
+* you point the finger at me for messing up your device, I will laugh at you.
+
+
+
+FANPAGE (FACEBOOK ) : https://www.facebook.com/razorreborn
+------------------------------------------------------------
+
+
+
+
+Features :
+---------------
+
+    Build on Updated Sources.. for Marshmallow Thanks to nick37332001,KumaJay,zwliew,Tarun93
+
+    Better battery management.. Respect HMP.. Better Conservative . tweaked little
+    
+    Use all cores for booting
+
+    TCP added,Custom IOSCHEDULERS ADDED
+
+    Custom governors include ALUCARD, ELEMENTALX, DARKNESS, IMPULSE, YANKACTIVE
+
+    Custom Hotplugs Include ALUCARD,BRICKED and CLUSTERPLUG
+
+    Dynamic Fsync.. thanks to Varun Chitre
+
+    KCAL drivers added..
+
+    Powersuspend..
+
+    VIbrator Intensity Control
+
+    disabled KSM
+
+    CPU OC to 1.4Ghz
+
+    power efficient workqueue
+
+    exFAT support
+
+    Selinux Permanently Permissive
+
+    disabled crc Check upto 30% performance improvement
+
+    misc tweaks,Stability tweaks
+
+    -o2 optimisation
+
+    Thermal Throttle temp control from userspace .. Thanks franciscofranco
+
+    Bumped Kernel version to 3.10.93
+
+    kernel: use the gnu89 standard explicitly
+
+    Compiled Using Latest Toolchain.. UBERTC 6.0
+
+    Fix high load average from uninterruptible waits
+
+    Other RaZorSharp Optimizations
+
+
+
+
+
+INSTALLATION STEPS:
+=====================================
+
+
+Minimum Requirements To Install RaZorReborn Kernel:
+------------------------------
+    CM13
+    Rooted with custom Recovery (TWRP) ( YOU WILL HAVE IT, Without it you cant flash cm13 lol )
+
+
+Installation Procedure:
+------------------------------
+
+    Boot Into Recovery Mode
+    Flash provide Kernel Zip
+    Reboot To System
+
+
+
+
+
+CHANGELOG
+---------------
+
+
+
+* Initial Release v1.0
+
+
+
+KERNEL PREFERED APP :- KERNEL AUDITOR
+
+CREDITS
+---------------
+
+    @varun.chitre15
+    @AdiShakthi
+    @nick37332001
+    @ketut.kumajaya
+    @zwliew
+    @Tarun93
+
+
+DOWNLOAD LINK
+---------------------
+
+Build V1.0
+
+DOWNLOAD LINK NOV 22 V1.0
+UBER BUILD - https://www.androidfilehost.com/?fid=24269982087001977
+
+
+
+RECOMMENDED SETTINGS
+---------------------
+
+GOVERNOR : Darkness
+
+CPU FREQ : 200-1209 MHz
+
+IOSCHEDULER : bfq
+
+TCP : westwood
+
+
+XDA:DevDB Information
+===================================
+[22/11][Kernel][3.10.93][CM13] RazorReborn� v1.0 [Uber 6.0][Powersuspend]
+
+Contributors
+---------------------
+Kiran Anto
+Source Code: https://github.com/kirananto/razor_redmi2
+
+Kernel Special Features:
+---------------------
+
+Version Information
+Status: Stable
+Current Stable Version: RazorReborn v1.0
+Beta Release Date: 2015-11-22
+
+Created 2015-11-22
+Last Updated 2015-11-22 
