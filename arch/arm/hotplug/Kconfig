@@ -20,7 +20,7 @@ config CLUSTER_PLUG
 
 config MAKO_PLUG
         bool "Enable cluster-plug cpu hotplug driver"
-        depends on !MAKO_PLUG
+        depends on !INTELLI_PLUG
         default n
         help
           CPU hotplug driver designed for ARM big.LITTLE systems where
