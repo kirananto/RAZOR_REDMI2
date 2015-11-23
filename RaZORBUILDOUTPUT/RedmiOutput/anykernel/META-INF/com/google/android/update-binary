@@ -62,7 +62,6 @@ ui_print "Please Wait for your";
 ui_print "RazorSharp Phone.......";
 ui_print "***********************";
 rm -rf /system/vendor/lib/hw/power.msm8916.so;
-rm -rf /system/vendor/lib64/hw/power.msm8916.so;
 /sbin/sh /tmp/anykernel/anykernel.sh;
 if [ "$(cat /tmp/anykernel/exitcode)" == 1 ]; then 
   umount /system;

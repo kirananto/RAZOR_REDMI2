@@ -73,7 +73,7 @@ compile_kernel
 esac
 cp $KERNEL_DIR/arch/arm/boot/zImage  $KERNEL_DIR/RaZORBUILDOUTPUT/RedmiOutput/anykernel/zImage
 cd $KERNEL_DIR/RaZORBUILDOUTPUT/RedmiOutput/anykernel/
-zipfile="RR1.0-GCC46REDMI-$(date +"%Y-%m-%d(%I.%M%p)").zip"
+zipfile="RaZorRebornV1.0r2-UBER-6.0-$(date +"%Y-%m-%d(%I.%M%p)").zip"
 zip -r ../$zipfile ramdisk anykernel.sh dtb zImage patch tools META-INF -x *kernel/.gitignore*
 dropbox_uploader -p upload $KERNEL_DIR/RaZORBUILDOUTPUT/RedmiOutput/$zipfile /test/
 dropbox_uploader share /test/$zipfile
