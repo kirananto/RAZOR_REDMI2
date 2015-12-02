@@ -55,7 +55,7 @@ echo -e " |_|  \_\|_____||____/ |_____||_|  \_\|_|    \___|"
 echo -e "****************************************************"
 echo -e "****************************************************"
 make razor_redmi2_defconfig
-make -j4
+make -j12
 if ! [ -a $KERN_IMG ];
 then
 echo -e "$red Kernel Compilation failed! Fix the errors! $nocol"
